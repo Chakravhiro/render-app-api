@@ -25,7 +25,7 @@ public class UserController {
         userService.setData(user);
     }
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/users/{expenseId}")
     public ResponseEntity<String> deleteExpenseById(@PathVariable long expenseId) {
         userService.deleteUser(expenseId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Expense deleted successfully");

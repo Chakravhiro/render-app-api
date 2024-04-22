@@ -46,7 +46,7 @@ public class ExpenseController {
         expenseService.setData(expense);
     }
 
-    @DeleteMapping("/expenses/{id}")
+    @DeleteMapping("/expenses/{expenseId}")
     public ResponseEntity<String> deleteExpenseById(@PathVariable UUID expenseId) {
         expenseService.DeleteData(expenseId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Expense deleted successfully");
