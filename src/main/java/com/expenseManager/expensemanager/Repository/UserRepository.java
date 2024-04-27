@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 public interface UserRepository extends JpaRepository<User, Long>{
 
 //    @Modifying
@@ -39,5 +41,9 @@ public interface UserRepository extends JpaRepository<User, Long>{
     @Modifying
     @Query("delete from User u where u.id = ?1")
     void deleteByUserID(Long id);
+
+    @Query("select u from User u where u.Username = ?1")
+    Optional<User> findUserByName(String Username);
+
 
 }

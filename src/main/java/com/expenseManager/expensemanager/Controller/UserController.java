@@ -31,4 +31,10 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Expense deleted successfully");
     }
 
+    @GetMapping("/users/{username}")
+    public User getUserByName(@PathVariable String username){
+        return userService.getUserByName(username);
+
+    }
+
 }
